@@ -170,6 +170,59 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
+// Development overlay close logic
+const DEV_OVERLAY_PASSWORD = 'webdev'; // Change this to your desired unlock password
+
+function setBodyScrollLocked(enabled) {
+    if (enabled) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = 'none';
+    } else {
+        document.body.style.overflow = '';
+        document.body.style.touchAction = '';
+    }
+}
+
+function initDevOverlays() {
+    document.querySelectorAll('.dev-overlay').forEach(overlay => {
+        const form = overlay.querySelector('.dev-overlay-form');
+        const passwordInput = overlay.querySelector('.dev-overlay-input');
+        const feedback = overlay.querySelector('.dev-overlay-feedback');
+        if (!form || !passwordInput || !feedback) return;
+
+        const overlayPassword = overlay.dataset.overlayPassword || DEV_OVERLAY_PASSWORD;
+        overlay.classList.add('visible');
+        setBodyScrollLocked(true);
+
+        const hideOverlay = () => {
+            overlay.classList.add('hiding');
+            overlay.classList.remove('visible');
+            setBodyScrollLocked(false);
+
+            const finishHide = () => {
+                overlay.classList.add('dev-overlay-hidden');
+                overlay.classList.remove('hiding');
+                overlay.removeEventListener('transitionend', finishHide);
+            };
+
+            overlay.addEventListener('transitionend', finishHide);
+        };
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const value = passwordInput.value.trim();
+            if (value === overlayPassword) {
+                hideOverlay();
+            } else {
+                feedback.textContent = 'Falsches Passwort. Versuche es erneut.';
+                passwordInput.focus();
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initDevOverlays);
+
 // Add scroll animation for elements
 const observerOptions = {
     threshold: 0.1,

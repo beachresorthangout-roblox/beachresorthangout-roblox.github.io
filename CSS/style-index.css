@@ -61,6 +61,130 @@ body {
     }
 }
 
+.dev-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: #000;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    touch-action: none;
+    overscroll-behavior: none;
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out, visibility 0.35s ease-out;
+    transform: scale(0.96);
+}
+
+.dev-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.dev-overlay.hiding {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+.dev-overlay-hidden {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.dev-overlay-card {
+    position: relative;
+    width: min(700px, 100%);
+    padding: 2rem 2.25rem;
+    border-radius: 28px;
+    background: rgba(15, 25, 35, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+}
+
+.dev-overlay-icon {
+    font-size: 3rem;
+}
+
+.dev-overlay-card h2 {
+    font-size: clamp(2rem, 2.5vw, 2.75rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.dev-overlay-card p {
+    color: rgba(245, 245, 245, 0.85);
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.dev-overlay-form {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.dev-overlay-input,
+.dev-overlay-submit {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--light-text);
+    padding: 0.95rem 1rem;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.dev-overlay-input:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 4px rgba(22, 168, 216, 0.12);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.dev-overlay-submit {
+    cursor: pointer;
+    font-weight: 700;
+    background: var(--accent-orange);
+    border: none;
+    color: white;
+}
+
+.dev-overlay-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(255, 107, 53, 0.25);
+}
+
+.dev-overlay-feedback {
+    color: #ffd560;
+    min-height: 1.4rem;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -374,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(15, 25, 35, 0.98);
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--border-color);
-    z-index: 1000;
+    z-index: 10001;
     padding: 1.2rem 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     /* Navbar fade-in animation */
