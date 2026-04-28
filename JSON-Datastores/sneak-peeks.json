@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Neue Strandpromenade",
+    "date": "2025-08-12",
+    "time": "18:30",
+    "creator": "Marina",
+    "version": "v1.2",
+    "summary": "Eine neue Strandpromenade mit Skateboard-Rampen, Strandbars und interaktiven NPCs.",
+    "images": ["bilder/sneak-peek-1.jpg", "bilder/sneak-peek-1-2.jpg"]
+  },
+  {
+    "title": "Wettereffekte & Nachtmodus",
+    "date": "2025-09-02",
+    "time": "12:00",
+    "creator": "Kai",
+    "version": "v1.3",
+    "summary": "Dynamisches Wetter, Sonnenuntergang-Animationen und entspannte Nachtbeleuchtung.",
+    "images": ["bilder/sneak-peek-2.jpg"]
+  },
+  {
+    "title": "Neue Haustier-Companions",
+    "date": "2025-10-05",
+    "time": "15:15",
+    "creator": "Lina",
+    "version": "v1.4",
+    "summary": "Sammle und trainiere niedliche Begleiter, die dich im Resort begleiten.",
+    "images": ["bilder/sneak-peek-3.jpg", "bilder/sneak-peek-3-2.jpg", "bilder/sneak-peek-3-3.jpg"]
+  }
+]

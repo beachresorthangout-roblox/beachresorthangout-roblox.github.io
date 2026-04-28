@@ -108,16 +108,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href === '#') return;
-        
+
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Calculate offset position (accounting for fixed navbar)
+            const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+            const elementPosition = target.offsetTop - navbarHeight - 20; // 20px extra padding
+
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
             });
         }
     });
+});
+
+// Handle URL hash navigation on page load (for external links)
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash && hash !== '#') {
+        // Prevent browser default scroll behavior by scrolling to top first
+        window.scrollTo(0, 0);
+
+        // Longer delay to ensure smooth transition
+        setTimeout(() => {
+            const target = document.querySelector(hash);
+            if (target) {
+                // Use the same scrolling logic as internal links
+                const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+                const elementPosition = target.offsetTop - navbarHeight - 20; // 20px extra padding
+
+                // Slower, more elegant scroll animation
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 800); // Increased delay for better visual effect
+    }
+});
+
+// Also handle pageshow event (for cached pages/back button)
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) { // Page was loaded from cache
+        const hash = window.location.hash;
+        if (hash && hash !== '#') {
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                const target = document.querySelector(hash);
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+                    const elementPosition = target.offsetTop - navbarHeight - 20;
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 800); // Same delay for consistency
+        }
+    }
 });
 
 // Add scroll animation for elements
@@ -196,21 +246,93 @@ document.querySelectorAll('.stat-card h3').forEach(element => {
 // Add active state to navigation links based on scroll
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     document.querySelectorAll('section').forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
+
+    // Remove all section highlights first
     document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('section-active');
+    });
+
+    // Add section highlight if we're on index.html
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('section-active');
+            }
+        });
+    }
+});
+
+function highlightCurrentPage() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        const href = link.getAttribute('href');
+
+        // Handle different link types
+        if (href === currentPath ||
+            (currentPath === 'index.html' && href.startsWith('#')) ||
+            (href.includes(currentPath) && !href.startsWith('#'))) {
             link.classList.add('active');
         }
+    });
+}
+
+// Initialize page highlighting
+document.addEventListener('DOMContentLoaded', highlightCurrentPage);
+
+// Handle URL hash navigation with smooth scroll
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    console.log('Hash detected:', hash); // Debug log
+    if (hash) {
+        console.log('Scrolling to:', hash); // Debug log
+        // Remove hash from URL to prevent browser default behavior
+        history.replaceState(null, null, window.location.pathname);
+
+        // Wait for page to fully load before scrolling
+        setTimeout(() => {
+            const targetElement = document.querySelector(hash);
+            console.log('Target element found:', targetElement); // Debug log
+            if (targetElement) {
+                // Calculate offset position (accounting for fixed navbar)
+                const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+                const elementPosition = targetElement.offsetTop - navbarHeight - 20; // 20px extra padding
+
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+                console.log('Scrolled to element at position:', elementPosition); // Debug log
+            } else {
+                console.log('Element not found for hash:', hash); // Debug log
+            }
+        }, 100);
+    } else {
+        console.log('No hash found in URL'); // Debug log
+    }
+});
+
+// FAQ functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.closest('.faq-item');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            faqItem.classList.toggle('open');
+        });
     });
 });
 

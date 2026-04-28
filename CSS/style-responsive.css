@@ -1,0 +1,109 @@
+/* Responsive Styles for Beach Resort Hangout */
+
+@media (max-width: 1100px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .about-content,
+    .features-grid,
+    .gallery-grid,
+    .team-grid,
+    .contact-content,
+    .faq-grid,
+    .peek-grid,
+    .devlog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 7rem 0 4rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(15, 25, 35, 0.98);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .nav-menu.active {
+        max-height: 420px;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-card,
+    .contact-form,
+    .contact-social,
+    .peek-card,
+    .devlog-card,
+    .faq-item {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .hero {
+        padding: 5rem 0 3rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .contact-content,
+    .about-content {
+        gap: 2rem;
+    }
+
+    .team-image-wrapper,
+    .gallery-placeholder {
+        min-height: 220px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

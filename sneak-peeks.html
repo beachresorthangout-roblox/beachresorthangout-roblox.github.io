@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sneak Peeks für Beach Resort Hangout - Einblicke in kommende Features und Updates.">
+    <title>Sneak Peeks | Beach Resort Hangout</title>
+    <link rel="stylesheet" href="CSS/style-index.css">
+    <link rel="stylesheet" href="CSS/style-responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo-icon">🏖️</div>
+                <div class="logo-text">
+                    <div class="logo-title">Beach Resort</div>
+                    <div class="logo-subtitle">Hangout</div>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">Über uns</a></li>
+                <li><a href="index.html#features" class="nav-link">Features</a></li>
+                <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                <li><a href="sneak-peeks.html" class="nav-link">Sneak Peeks</a></li>
+                <li><a href="devlog.html" class="nav-link">Dev Log</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sneak Peeks</h1>
+            <p class="hero-subtitle">Frische Einblicke in kommende Spielwelten, Features und Entwicklungsupdates.</p>
+            <div class="hero-buttons">
+                <a href="devlog.html" class="btn btn-secondary">Zum Dev Log</a>
+                <a href="index.html" class="btn btn-primary">Zur Startseite</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Aktuelle Einblicke</h2>
+            <div class="peek-grid" id="peekList">
+                <div class="peek-card empty-state">
+                    <p>Die Sneak Peeks werden direkt aus unserer JSON-Datenbank geladen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Beach Resort Hangout</h4>
+                    <p>Immer up-to-date bleiben mit neuen Einblicken.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="devlog.html">Dev Log</a></li>
+                        <li><a href="index.html#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Beach Resort Hangout. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="JS/script-index.js"></script>
+    <script src="JS/script-pages.js"></script>
+</body>
+</html>
