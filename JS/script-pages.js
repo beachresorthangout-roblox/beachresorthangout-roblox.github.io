@@ -33,7 +33,7 @@ async function loadSneakPeeks() {
         peekList.innerHTML = peekData.map(peek => {
             const imageGallery = peek.images && peek.images.length > 0 ?
                 `<div class="peek-images">
-                    ${peek.images.map(img => `<img src="${img}" alt="${peek.title}" class="peek-image">`).join('')}
+                    ${peek.images.map(img => `<a href="${img}" target="_blank" rel="noopener noreferrer"><img src="${img}" alt="${peek.title}" class="peek-image"></a>`).join('')}
                 </div>` : '';
 
             return `
@@ -49,7 +49,7 @@ async function loadSneakPeeks() {
                     <p class="peek-summary">${peek.summary}</p>
                     <div class="peek-meta">
                         <span>${formatDate(peek.date)} • ${peek.time}</span>
-                        <span>Ersteller: ${peek.creator}</span>
+                        <span>Creator: ${peek.creator}</span>
                     </div>
                 </article>
             `;

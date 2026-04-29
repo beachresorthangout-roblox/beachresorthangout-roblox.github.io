@@ -9,21 +9,48 @@
     "images": ["bilder/image5121.png"]
   },
   {
-    "title": "Wettereffekte & Nachtmodus",
-    "date": "2025-09-02",
-    "time": "12:00",
-    "creator": "Kai",
-    "version": "v1.3",
-    "summary": "Dynamisches Wetter, Sonnenuntergang-Animationen und entspannte Nachtbeleuchtung.",
-    "images": ["bilder/sneak-peek-2.jpg"]
+    "title": "Impression to Blender Modelling",
+    "date": "2025-12-09",
+    "time": "11:12",
+    "creator": "ItzaStudio",
+    "version": "v0.1",
+    "summary": "It took longer than I would like to admit...",
+    "images": ["bilder/image3021.png", "bilder/image3022.png"]
   },
   {
-    "title": "Neue Haustier-Companions",
-    "date": "2025-10-05",
-    "time": "15:15",
-    "creator": "Lina",
-    "version": "v1.4",
-    "summary": "Sammle und trainiere niedliche Begleiter, die dich im Resort begleiten.",
-    "images": ["bilder/sneak-peek-3.jpg", "bilder/sneak-peek-3-2.jpg", "bilder/sneak-peek-3-3.jpg"]
+    "title": "A beach stage?",
+    "date": "2025-12-10",
+    "time": "15:10",
+    "creator": "ItzaStudio",
+    "version": "v0.2",
+    "summary": "A stage on the beach? Yes, we are planning to have one for concerts and events 👀😁",
+    "images": ["bilder/image5122.png"]
+  },
+  {
+    "title": "Banan?",
+    "date": "2025-12-11",
+    "time": "18:26",
+    "creator": "ItzaStudio",
+    "version": "v0.2",
+    "summary": "🧐👀",
+    "images": ["bilder/Screenshot_2025-12-11_195010.png"]
+  },
+  {
+    "title": "DJ GameVorces",
+    "date": "2025-12-12",
+    "time": "19:58",
+    "creator": "ItzaStudio",
+    "version": "v0.2",
+    "summary": "🎶🎧",
+    "images": ["bilder/image5123.png"]
+  },
+  {
+    "title": "Welcome to the SANDY WAVE STAGE!",
+    "date": "2025-12-19",
+    "time": "15:58",
+    "creator": "ItzaStudio",
+    "version": "v0.3",
+    "summary": "Get ready for unforgettable concerts and events right on the beach at Sandy Wave Stage! 🌊🎶",
+    "images": ["bilder/BRH_Mit_Clipchamp_erstellt.mp4"]
   }
 ]
