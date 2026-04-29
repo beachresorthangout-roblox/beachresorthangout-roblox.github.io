@@ -1,12 +1,12 @@
 [
   {
-    "title": "Neue Strandpromenade",
-    "date": "2025-08-12",
-    "time": "18:30",
-    "creator": "Marina",
-    "version": "v1.2",
-    "summary": "Eine neue Strandpromenade mit Skateboard-Rampen, Strandbars und interaktiven NPCs.",
-    "images": ["bilder/sneak-peek-1.jpg", "bilder/sneak-peek-1-2.jpg"]
+    "title": "The very first impression of the game",
+    "date": "2025-12-08",
+    "time": "16:35",
+    "creator": "ItzaStudio",
+    "version": "v0.1",
+    "summary": "A first look at the earliest stage of our beach resort hangout. Stay tuned ^^",
+    "images": ["bilder/image5121.png"]
   },
   {
     "title": "Wettereffekte & Nachtmodus",

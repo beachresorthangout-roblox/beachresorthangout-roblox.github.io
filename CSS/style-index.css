@@ -458,10 +458,11 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     padding: 0.4rem 1rem;
     border-radius: 999px;
-    background: rgba(255,107,53,0.12);
-    color: var(--accent-orange);
+    background: #379DBE;
+    color: #052029;
     font-size: 0.9rem;
     font-weight: 700;
+    margin-bottom: 18px;
 }
 
 .peek-version,
@@ -1332,7 +1333,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 6rem var(--spacing-unit);
     background: #0f1922;
     /* Features & Sneak Peeks section fade-in animation */
-    border: #F5F5F5 1px solid;
+    border-top: #F5F5F5 1px solid;
+    border-bottom: #F5F5F5 1px solid;
+    opacity: 0;
+    animation: fadeInSection 0.8s ease-out 1.5s forwards;
+}
+
+
+.features-devlog {
+    padding: 6rem var(--spacing-unit);
+    background: #0f1922;
+    /* Features & Sneak Peeks section fade-in animation */
+    border-top: #F5F5F5 1px solid;
     opacity: 0;
     animation: fadeInSection 0.8s ease-out 1.5s forwards;
 }
