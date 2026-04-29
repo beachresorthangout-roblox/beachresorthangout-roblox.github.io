@@ -31,14 +31,15 @@ async function loadSneakPeeks() {
         if (!peekList) return;
 
         peekList.innerHTML = peekData.map(peek => {
-            const imageGallery = peek.images && peek.images.length > 0 ?
+            const mediaItems = peek.media ?? peek.images ?? [];
+            const mediaGallery = mediaItems && mediaItems.length > 0 ?
                 `<div class="peek-images">
-                    ${peek.images.map(img => `<a href="${img}" target="_blank" rel="noopener noreferrer"><img src="${img}" alt="${peek.title}" class="peek-image"></a>`).join('')}
+                    ${mediaItems.map(item => renderPeekMedia(item, peek.title)).join('')}
                 </div>` : '';
 
             return `
                 <article class="peek-card">
-                    ${imageGallery}
+                    ${mediaGallery}
                     <div class="peek-head">
                         <div>
                             <span class="peek-tag">Sneak Peek</span>
@@ -95,4 +96,43 @@ function formatDate(dateString) {
         month: '2-digit',
         year: 'numeric'
     });
+}
+
+function renderPeekMedia(item, title) {
+    if (typeof item === 'string') {
+        if (isVideoSrc(item)) {
+            return renderVideoItem(item);
+        }
+        return `<a href="${item}" target="_blank" rel="noopener noreferrer"><img src="${item}" alt="${title}" class="peek-image"></a>`;
+    }
+
+    if (item && item.type === 'video' && item.src) {
+        return renderVideoItem(item.src, item.poster);
+    }
+
+    if (item && item.src) {
+        return `<a href="${item.src}" target="_blank" rel="noopener noreferrer"><img src="${item.src}" alt="${item.alt || title}" class="peek-image"></a>`;
+    }
+
+    return '';
+}
+
+function renderVideoItem(src, poster) {
+    return `<video class="peek-video" controls preload="metadata"${poster ? ` poster="${poster}"` : ''}>
+                <source src="${src}" type="${getVideoMimeType(src)}">
+                Dein Browser unterstützt kein HTML5-Video.
+            </video>`;
+}
+
+function isVideoSrc(src) {
+    return /\.(mp4|webm|ogg|mov|m4v)(\?.*)?$/i.test(src);
+}
+
+function getVideoMimeType(src) {
+    if (/\.mp4(\?.*)?$/i.test(src)) return 'video/mp4';
+    if (/\.webm(\?.*)?$/i.test(src)) return 'video/webm';
+    if (/\.ogg(\?.*)?$/i.test(src)) return 'video/ogg';
+    if (/\.mov(\?.*)?$/i.test(src)) return 'video/quicktime';
+    if (/\.m4v(\?.*)?$/i.test(src)) return 'video/x-m4v';
+    return 'video/mp4';
 }

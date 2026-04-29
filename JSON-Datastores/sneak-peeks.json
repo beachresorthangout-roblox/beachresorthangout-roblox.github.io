@@ -4,7 +4,7 @@
     "date": "2025-12-08",
     "time": "16:35",
     "creator": "ItzaStudio",
-    "version": "v0.1",
+    "version": "v0.0.1",
     "summary": "A first look at the earliest stage of our beach resort hangout. Stay tuned ^^",
     "images": ["bilder/image5121.png"]
   },
@@ -13,7 +13,7 @@
     "date": "2025-12-09",
     "time": "11:12",
     "creator": "ItzaStudio",
-    "version": "v0.1",
+    "version": "v0.0.1 / v0.0.2",
     "summary": "It took longer than I would like to admit...",
     "images": ["bilder/image3021.png", "bilder/image3022.png"]
   },
@@ -22,8 +22,8 @@
     "date": "2025-12-10",
     "time": "15:10",
     "creator": "ItzaStudio",
-    "version": "v0.2",
-    "summary": "A stage on the beach? Yes, we are planning to have one for concerts and events 👀😁",
+    "version": "v0.0.3",
+    "summary": "A stage on the beach? Yes, we are planning to have one for concerts and events.",
     "images": ["bilder/image5122.png"]
   },
   {
@@ -31,7 +31,7 @@
     "date": "2025-12-11",
     "time": "18:26",
     "creator": "ItzaStudio",
-    "version": "v0.2",
+    "version": "v0.0.4",
     "summary": "🧐👀",
     "images": ["bilder/Screenshot_2025-12-11_195010.png"]
   },
@@ -40,7 +40,7 @@
     "date": "2025-12-12",
     "time": "19:58",
     "creator": "ItzaStudio",
-    "version": "v0.2",
+    "version": "v0.0.5",
     "summary": "🎶🎧",
     "images": ["bilder/image5123.png"]
   },
@@ -49,8 +49,80 @@
     "date": "2025-12-19",
     "time": "15:58",
     "creator": "ItzaStudio",
-    "version": "v0.3",
+    "version": "v0.0.6",
     "summary": "Get ready for unforgettable concerts and events right on the beach at Sandy Wave Stage! 🌊🎶",
     "images": ["bilder/BRH_Mit_Clipchamp_erstellt.mp4"]
+  },
+  {
+    "title": "Someone wanting a coffee? ☕👀",
+    "date": "2026-01-09",
+    "time": "15:37",
+    "creator": "ItzaStudio",
+    "version": "v0.1.0",
+    "summary": "A sneak peek of our upcoming coffee shop! ☕👀 Remember that everything is still work in progress and is not final yet.",
+    "images": ["bilder/BRH_Sneak_Peek_Mit_Clipchamp_erstellt.mp4"]
+  },
+  {
+    "title": "Oh look, it's a toy boat! 😎⛵",
+    "date": "2026-01-13",
+    "time": "18:26",
+    "creator": "ItzaStudio",
+    "version": "v0.1.0",
+    "summary": "A sneak peek of our upcoming boat ride! 😎⛵ Remember that everything is still work in progress ^^",
+    "images": ["bilder/image4099.png"]
+  },
+  {
+    "title": "Sandy Wave Backstage.. 👀📷",
+    "date": "2026-01-23",
+    "time": "13:32",
+    "creator": "ItzaStudio",
+    "version": "v0.1.2",
+    "summary": "A sneak peek of the backstage area of our Sandy Wave Stage! 👀📷 \n Stay tuned for more ;-)!",
+    "images": ["bilder/Beach_Resort_Hangout_1.png"]
+  },
+  {
+    "title": "Welcome to the Sandy Wave!",
+    "date": "2026-01-24",
+    "time": "09:57",
+    "creator": "ItzaStudio",
+    "version": "v0.1.2",
+    "summary": "Sandy Wave Stage 🌊🎶 Get ready for unforgettable concerts and events right on the beach.",
+    "images": ["bilder/image6052.png"]
+  },
+  {
+    "title": "The island at NIGHT 🌙✨",
+    "date": "2026-02-13",
+    "time": "14:06",
+    "creator": "ItzaStudio",
+    "version": "v0.1.2",
+    "summary": "A sneak peek of the island at night 🌃🌜. The atmosphere is so magical, isn't it?",
+    "images": ["bilder/Beach_Resort_Hangout_3.png"]
+  },
+  {
+    "title": "Ocean Man.. 🌊👨",
+    "date": "2026-02-27",
+    "time": "19:22",
+    "creator": "ItzaStudio",
+    "version": "v0.1.5",
+    "summary": "An insight into the current HUD/UI, along with a view of the sea. Isn't it beautiful? 🐳🪼",
+    "images": ["bilder/BRH_Sneak_Peek.mp4"]
+  },
+  {
+    "title": "Need some coins? 👀🪙",
+    "date": "2026-03-16",
+    "time": "19:28",
+    "creator": "ItzaStudio",
+    "version": "v0.2.0",
+    "summary": "You can buy some coins in the coin shop. But don't worry, BRH will never be pay-to-win! You can also earn coins through gameplay! 🪙😉",
+    "images": ["bilder/BRH_4.png"]
+  },
+  {
+    "title": "This is nice.. 🥱🛏️",
+    "date": "2026-03-23",
+    "time": "07:39",
+    "creator": "ItzaStudio",
+    "version": "v0.2.0",
+    "summary": "Relax on a beach lounger at the Beach Resort and enjoy the view of the sea 🏝️🏄‍♀️",
+    "images": ["bilder/V0.2.0.png"]
   }
 ]

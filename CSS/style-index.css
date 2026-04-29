@@ -267,7 +267,9 @@ h1, h2, h3, h4, h5, h6 {
 .wiki-cta {
     padding: 6rem 0;
     background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(15,25,35,0.95));
-    background-image: url('../bilder/image5123.png');
+    border-top: 0.8px solid white;
+    border-bottom: 0.8px solid white;
+    background-image: url('../bilder/Screenshot_2026-04-29_191556.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -340,6 +342,7 @@ h1, h2, h3, h4, h5, h6 {
     /* FAQ section fade-in animation */
     opacity: 0;
     animation: fadeInSection 0.8s ease-out 1.8s forwards;
+    border-bottom: 0.8px solid white;
 }
 
 .faq-grid {
@@ -404,13 +407,13 @@ h1, h2, h3, h4, h5, h6 {
 .devlog-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .peek-card,
 .devlog-card {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 0.4px solid rgba(248, 231, 231, 0.192);
     border-radius: 28px;
     padding: 2rem;
     box-shadow: var(--shadow-lg);
@@ -431,17 +434,25 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.peek-image {
+.peek-image,
+.peek-video {
     width: 100%;
     height: 120px;
     object-fit: cover;
     border-radius: 12px;
     transition: var(--transition);
-    cursor: pointer;
+}
+
+.peek-video {
+    background: #000;
 }
 
 .peek-images a {
     display: block;
+}
+
+.peek-image {
+    cursor: pointer;
 }
 
 .peek-image:hover {
@@ -488,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     gap: 0.75rem;
     color: rgba(245,245,245,0.7);
-    font-size: 0.95rem;
+    font-size: 0.87rem;
 }
 
 .devlog-tag {
@@ -508,7 +519,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     background: rgba(15, 25, 35, 0.98);
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid white;
     z-index: 10001;
     padding: 1.2rem 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -662,6 +673,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Hero fade-in animation */
     opacity: 0;
     animation: fadeInHero 1s ease-out 0.6s forwards;
+    border-bottom: 0.8px solid white;
 }
 
 @keyframes fadeInHero {
@@ -850,6 +862,8 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    border-top: 0.8px solid white;
+    border-bottom: 0.8px solid white;
     opacity: 0;
     animation: fadeInSection 0.8s ease-out 1s forwards;
 }
@@ -1338,8 +1352,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 6rem var(--spacing-unit);
     background: #0f1922;
     /* Features & Sneak Peeks section fade-in animation */
-    border-top: #F5F5F5 1px solid;
-    border-bottom: #F5F5F5 1px solid;
     opacity: 0;
     animation: fadeInSection 0.8s ease-out 1.5s forwards;
 }
@@ -1349,7 +1361,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 6rem var(--spacing-unit);
     background: #0f1922;
     /* Features & Sneak Peeks section fade-in animation */
-    border-top: #F5F5F5 1px solid;
     opacity: 0;
     animation: fadeInSection 0.8s ease-out 1.5s forwards;
 }
