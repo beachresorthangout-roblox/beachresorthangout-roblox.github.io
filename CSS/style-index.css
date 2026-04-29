@@ -186,7 +186,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 var(--spacing-unit);
 }
@@ -1160,7 +1160,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
     background: linear-gradient(135deg, #0a0f18, #1a2a38);
-    border-top: 1px solid var(--border-color);
+    border-top: 0.8px solid white;
     padding: 4rem var(--spacing-unit) 2rem;
 }
 
@@ -1326,3 +1326,13 @@ h1, h2, h3, h4, h5, h6 {
 .mt-2 { margin-top: calc(var(--spacing-unit) * 2); }
 .mb-1 { margin-bottom: var(--spacing-unit); }
 .mb-2 { margin-bottom: calc(var(--spacing-unit) * 2); }
+
+
+.features-sneakpeeks {
+    padding: 6rem var(--spacing-unit);
+    background: #0f1922;
+    /* Features & Sneak Peeks section fade-in animation */
+    border: #F5F5F5 1px solid;
+    opacity: 0;
+    animation: fadeInSection 0.8s ease-out 1.5s forwards;
+}
