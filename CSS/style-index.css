@@ -267,6 +267,10 @@ h1, h2, h3, h4, h5, h6 {
 .wiki-cta {
     padding: 6rem 0;
     background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(15,25,35,0.95));
+    background-image: url('../bilder/image5123.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .wiki-cta .cta-card {
@@ -275,6 +279,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 3rem 2rem;
     background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 30px;
     box-shadow: var(--shadow-lg);
@@ -845,17 +850,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     gap: 2rem;
 }
 
 .feature-card {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.69);
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     transition: var(--transition);
     cursor: pointer;
 }
