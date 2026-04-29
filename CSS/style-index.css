@@ -835,7 +835,10 @@ h1, h2, h3, h4, h5, h6 {
 .features {
     padding: 6rem var(--spacing-unit);
     background: var(--dark-bg);
-    /* Features section fade-in animation */
+    background-image: url('../bilder/image5121.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     opacity: 0;
     animation: fadeInSection 0.8s ease-out 1s forwards;
 }
@@ -1118,7 +1121,7 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 }
 
 .contact-social h3 {
