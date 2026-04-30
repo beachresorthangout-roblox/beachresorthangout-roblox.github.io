@@ -9,6 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const devlogButtons = document.querySelectorAll('.devlog-question');
+    devlogButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const devlogItem = button.closest('.devlog-item');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            devlogItem.classList.toggle('open');
+        });
+    });
+
     if (document.getElementById('peekList')) {
         loadSneakPeeks();
     }
@@ -73,17 +83,32 @@ async function loadDevLog() {
         if (!devlogList) return;
 
         devlogList.innerHTML = devlogData.map(entry => `
-            <article class="devlog-card">
-                <div class="devlog-head">
-                    <div>
-                        <h3>${entry.title}</h3>
-                        <span class="devlog-tag">${entry.tag}</span>
+            <article class="devlog-item">
+                <button class="devlog-question" aria-expanded="false">
+                    <div class="devlog-head">
+                        <div>
+                            <h3>${entry.title}</h3>
+                            <span class="devlog-tag">${entry.tag}</span>
+                        </div>
+                        <span class="devlog-date">${formatDate(entry.date)}</span>
                     </div>
-                    <span class="devlog-date">${formatDate(entry.date)}</span>
+                </button>
+                <div class="devlog-answer">
+                    <p>${entry.details}</p>
                 </div>
-                <p>${entry.details}</p>
             </article>
         `).join('');
+
+        // Bind devlog event listeners after content is loaded
+        const devlogButtons = document.querySelectorAll('.devlog-question');
+        devlogButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const devlogItem = button.closest('.devlog-item');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', String(!isExpanded));
+                devlogItem.classList.toggle('open');
+            });
+        });
     } catch (error) {
         console.error('Dev Log JSON konnte nicht geladen werden:', error);
     }

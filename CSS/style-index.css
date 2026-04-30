@@ -403,11 +403,83 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 2rem 1.8rem;
 }
 
-.peek-grid,
-.devlog-grid {
+.devlog-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+}
+
+.devlog-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--secondary-blue);
+}
+
+.devlog-question {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--light-text);
+    padding: 1.8rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.devlog-question:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.devlog-question::after {
+    content: '+';
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+    color: var(--accent-orange);
+}
+
+.devlog-item.open .devlog-question::after {
+    transform: rotate(45deg);
+}
+
+.devlog-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 2rem;
+    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
+    background: rgba(255,255,255,0.02);
+}
+
+.devlog-item.open .devlog-answer {
+    max-height: 400px;
+    opacity: 1;
+    padding: 0 2rem 1.8rem;
+}
+
+.devlog-answer p {
+    margin: 0;
+    color: rgba(245,245,245,0.85);
+    line-height: 1.6;
+}
+
+.peek-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem;
+}
+
+.devlog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .peek-card,
@@ -468,6 +540,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     align-items: flex-start;
     margin-bottom: 1.2rem;
+    width: 100%;
 }
 
 .peek-tag {
@@ -509,12 +582,20 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.35rem 0.9rem;
+    padding: 0.4rem 1rem;
     border-radius: 999px;
-    background: rgba(22,168,216,0.12);
-    color: var(--secondary-blue);
+    background: #379DBE;
+    color: #052029;
     font-size: 0.9rem;
     font-weight: 700;
+    margin-top: 12px;
+}
+
+.devlog-date {
+    color: rgba(245,245,245,0.75);
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .navbar {
