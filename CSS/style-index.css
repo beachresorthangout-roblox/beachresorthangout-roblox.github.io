@@ -418,6 +418,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2rem;
     box-shadow: var(--shadow-lg);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .peek-card:hover,
@@ -500,6 +502,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.75rem;
     color: rgba(245,245,245,0.7);
     font-size: 0.87rem;
+    margin-top: auto;
 }
 
 .devlog-tag {
@@ -981,8 +984,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -995,6 +999,7 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     transition: var(--transition);
     overflow: hidden;
+    flex: 0 0 250px;
 }
 
 .team-card:hover {
@@ -1280,6 +1285,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
     }
 
     .about-stats {
@@ -1322,6 +1328,7 @@ h1, h2, h3, h4, h5, h6 {
     .gallery-grid,
     .team-grid {
         grid-template-columns: 1fr;
+        justify-content: center;
     }
 
     .about-stats {
